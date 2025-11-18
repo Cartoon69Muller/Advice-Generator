@@ -1,0 +1,105 @@
+:root {
+  --bg: hsl(218, 23%, 16%);
+  --card-bg: hsl(217, 19%, 24%);
+  --line: hsl(217, 19%, 38%);
+  --text: hsl(193, 38%, 86%);
+  --accent: hsl(150, 100%, 66%);
+}
+body.light {
+  --bg: hsl(0, 0%, 95%);
+  --card-bg: hsl(0, 0%, 100%);
+  --line: hsl(0, 0%, 75%);
+  --text: hsl(218, 23%, 16%);
+  --accent: hsl(150, 100%, 40%);
+}
+body {
+  background-color: var(--bg);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.4s;
+}
+.theme-toggle {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.2s;
+}
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+.card {
+  background-color: var(--card-bg);
+  color: var(--text);
+  width: 350px;
+  padding: 30px 25px 60px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.advice-id {
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+}
+
+.advice-text {
+  font-size: 1.4rem;
+  margin: 25px 0;
+  line-height: 1.6;
+}
+.pattern-divider {
+  width: 100%;
+  max-width: 300px;     
+  margin: 25px auto;   
+  display: block;
+  filter: brightness(0.8); 
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.pattern-divider:hover {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+body.light .pattern-divider {
+  filter: brightness(0.5);
+}
+.dice-btn {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--accent);
+  transition: 0.25s ease;
+}
+.dice-btn:hover {
+  transform: translateX(-50%) scale(1.07);
+  box-shadow: 0 0 35px var(--accent);
+}
+/* Dice spin animation */
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
